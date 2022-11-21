@@ -1,0 +1,23 @@
+<%- include ../layouts/header.ejs %>
+<div class="page-data">
+    <form method="post" action="/country/add">
+        <table cellpadding="11">
+            <tr>
+                <td class="label">Country</td>
+                <td><input type="text" name="name" required /></td>
+            </tr>
+            <tr>
+                <td class="label">Population</td>
+                <td><input type="text" name="population" required /></td>
+            </tr>
+            <tr>
+                <td class="label"></td>
+                <td>
+                    <button type="submit">Save</button>
+                    <button type="button" onClick="cancelAddCountry()">Cancel</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<%- include ../layouts/footer.ejs %>

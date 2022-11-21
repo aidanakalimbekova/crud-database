@@ -1,0 +1,37 @@
+<%- include ../layouts/header.ejs %>
+<div class="page-data">
+    <div class="data-btn">
+        <button onClick="addCountry();">+ Add</button>
+    </div>
+    <div class="data-table">
+        <table>
+            <tr>
+                <th width="50px">No</th>
+                <th>Country</th>
+                <th>Population</th>
+            </tr>
+
+            <% if(data.length){
+
+            for(var i = 0;i < data.length;i++) { %>
+
+            <tr>
+                <td><%=(i+1)%></td>
+                <td><%=data[i].country%></td>
+                <td><%=data[i].population%></td>
+                <td>
+                    <a class="a-inside edit" href="../country/edit/<%=data[i].id%>">Edit</a>
+                    <a class="a-inside delete" href="../country/delete/<%=data[i].id%>">Delete</a>
+                </td>
+            </tr>
+            <% }
+            }else{ %>
+            <tr>
+                <td colspan="6">No user</td>
+            </tr>
+            <% } %>
+        </table>
+    </div>
+</div>
+
+<%- include ../layouts/footer.ejs %>
